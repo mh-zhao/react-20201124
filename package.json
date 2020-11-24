@@ -9,8 +9,15 @@
     "test:coverage": "umi-test --coverage",
     "commit": "git-cz"
   },
-  "config": {    
-    "commitizen": {"path": "node_modules/cz-conventional-changelog"}
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
@@ -36,6 +43,7 @@
   },
   "devDependencies": {
     "commitizen": "^4.2.2",
-    "cz-conventional-changelog": "^3.3.0"
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^4.3.0"
   }
 }
